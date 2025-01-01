@@ -68,7 +68,7 @@ function saveCart(cart) {
 // Function to add a product to the cart
 function addToCart(product) {
   const cart = getCart();
-  cart.push(product);
+  cart.push({ ...product }); // Create a new object to avoid reference issues
   saveCart(cart);
   renderCart();
 }
